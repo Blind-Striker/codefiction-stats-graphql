@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Table,
   Glyphicon,
-  Grid,
   Col,
   Row,
   InputGroup,
@@ -32,7 +31,7 @@ export class TopBottomNEpisodes extends Component {
       '100',
     ];
     return (
-      <Grid>
+      <div>
         <Row className="dashboard--head-row">
           <Col md={4}>
             <FormGroup>
@@ -58,7 +57,7 @@ export class TopBottomNEpisodes extends Component {
           </Col>
         </Row>
         <Row>
-          <Col md={10}>
+          <Col md={12}>
             <Table
               striped
               bordered
@@ -78,7 +77,9 @@ export class TopBottomNEpisodes extends Component {
                     Toplam
                     <Glyphicon
                       className="dashboard--up-down-button"
-                      onClick={event => this.setState({ up: !this.state.up })}
+                      onClick={() =>
+                        this.setState(oldState => ({ up: !oldState.up }))
+                      }
                       glyph={this.state.up ? 'chevron-up' : 'chevron-down'}
                     />
                   </th>
@@ -139,7 +140,7 @@ export class TopBottomNEpisodes extends Component {
             </Table>
           </Col>
         </Row>
-      </Grid>
+      </div>
     );
   }
 }

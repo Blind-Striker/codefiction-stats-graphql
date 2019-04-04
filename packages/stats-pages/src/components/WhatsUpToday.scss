@@ -1,9 +1,26 @@
 .whatsup-today {
-  &--main {
-    padding: 10px;
+  &--header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    @media (max-width: 991.98px) {
+      justify-content: space-between;
+    }
   }
-  &--alert-header {
-    font-size: 1.2em;
-    padding-bottom: 5px;
+  &--refresh {
+    margin-left: 1em;
+    cursor: pointer;
+  }
+  &--animate {
+    animation: spin 1.5s infinite linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
   }
 }

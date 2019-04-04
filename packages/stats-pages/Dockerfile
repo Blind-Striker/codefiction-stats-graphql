@@ -1,8 +1,8 @@
-FROM node
+FROM node:8.10.0-alpine
 
 RUN mkdir /stats
 WORKDIR /stats
 
 COPY . .
-
-RUN npm install
+EXPOSE 3000
+RUN yarn

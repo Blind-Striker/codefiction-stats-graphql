@@ -1,10 +1,11 @@
 {
   "name": "codefiction-stats-graphql",
+  "private": true,
   "version": "1.0.0",
   "description": "Codefiction Podcast Statistics Application",
   "main": "index.js",
   "scripts": {
-    "build": "lerna run lint && lerna run build --parallel",
+    "build": "lerna run build --parallel",
     "dev": "lerna run dev --parallel",
     "deploy": "lerna run deploy",
     "start": "lerna run --scope stats-lambda start",
@@ -20,6 +21,9 @@
       "pre-commit": "npm run lint"
     }
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/msusur/codefiction-stats-graphql.git"

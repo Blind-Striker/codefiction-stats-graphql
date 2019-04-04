@@ -3,16 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install
-      - npm run bootstrap
+      - npm install yarn -g
+      - yarn
+      - yarn bootstrap
+  pre_build:
+    commands:
+      - yarn lint
   build:
     commands:
-      - npm run build
+      - yarn build
   post_build:
     commands:
       # Deploy SPA to S3 and deploy Serverless
-      - npm run deploy
+      - yarn deploy
 artifacts:
   files:
-    - "**/*"
-  base-directory: "packages/stats-pages/build"
+    - '**/*'
+  base-directory: 'packages/stats-pages/build'
